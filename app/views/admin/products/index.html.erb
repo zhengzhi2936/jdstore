@@ -9,6 +9,7 @@
   <td>商品描述</td>
   <td>商品库存</td>
   <td>商品价格</td>
+  <td>商品图片</td>
   <td>管理</td>
   <td>发表时间</td>
   <% @products.each do |product| %>
@@ -24,6 +25,9 @@
     </td>
     <td>
       <%= product.price %>
+    </td>
+    <td>
+      <%= image_tag(product.image) %>
     </td>
     <td>
       <%= link_to("Edit", edit_admin_product_path(product)) %>|

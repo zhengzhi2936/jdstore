@@ -1,5 +1,6 @@
 class Admin::ProductsController < ApplicationController
   before_action :authenticate_user!
+  before_action :require_is_admin
   def index
     @products = Product.all
   end
@@ -7,7 +8,7 @@ class Admin::ProductsController < ApplicationController
     @product = Product.new
   end
   def show
-    @produce = Product.find(params[:id])
+    @product = Product.find(params[:id])
   end
   def edit
     @product = Product.find(params[:id])
@@ -35,6 +36,6 @@ class Admin::ProductsController < ApplicationController
     end
   private
   def product_params
-    params.require(:product).permit(:title, :description, :quanlity, :price)
+    params.require(:product).permit(:title, :description, :quanlity, :price, :image)
   end
 end

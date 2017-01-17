@@ -4,4 +4,5 @@ class Product < ApplicationRecord
   validates :price, presence: true
   validates :quanlity, numericality: { greater_than: 0}
   validates :price, numericality: { greater_than: 0}
+  mount_uploader :image, ImageUploader
 end
