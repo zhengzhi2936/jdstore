@@ -29,7 +29,7 @@
     <%= f.label :avatar %><br>
     <%= f.file_field :avatar, :multiple => true, name: "photos[avatar][]" %>
   </div>
-
+<%= select_tag(:category_id, options_for_select(@categories), :prompt => "类别") %>
   <%= f.submit "Sbumit", data: { disable_with: "Submitting..."} %>
 
   <% end %>
