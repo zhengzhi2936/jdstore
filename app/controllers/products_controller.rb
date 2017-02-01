@@ -16,6 +16,10 @@ class ProductsController < ApplicationController
     if @query_string.present?
       search_result = Product.ransack(@search_criteria).result(:distinct => true)
       @products = search_result.paginate(:page => params[:page], :per_page => 20 )
+    else
+      redirect_to :back
+      flash[:alert] = "搜索内容不得为空！"
+
     end
   end
 
