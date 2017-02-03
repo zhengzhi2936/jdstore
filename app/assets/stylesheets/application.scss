@@ -16,6 +16,7 @@
 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+@import "chosen";
 
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 
@@ -120,7 +121,7 @@ html {
 
 body {
   margin-bottom: 150px;
-  padding-top: 65px; 
+  padding-top: 65px;
 }
 
 .footer {
@@ -179,3 +180,8 @@ body {
 		top:-20px;
 		width: 100%;
 	}
+
+
+  .messages {
+    max-height: 400px;overflow-y: auto;margin-bottom: 1em;margin-top: 1em;
+  }

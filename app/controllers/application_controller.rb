@@ -18,4 +18,13 @@ private
     session[:cart_id] = cart.id
     return cart
   end
+  
+  rescue_from ActiveRecord::RecordNotFound do
+  flash[:warning] = 'Resource not found.'
+  redirect_back_or root_path
+  end
+
+  def redirect_back_or(path)
+    redirect_to request.referer || path
+  end
 end

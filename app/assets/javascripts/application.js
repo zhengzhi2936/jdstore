@@ -17,4 +17,5 @@
 //= require bootstrap/dropdown
 //= require bootstrap/modal
 //= require local_time
+//= require chosen-jquery
 //= require_tree .
