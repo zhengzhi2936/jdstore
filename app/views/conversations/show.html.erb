@@ -4,7 +4,7 @@
     <div class="messages">
       <% @conversation.receipts_for(current_user).each do |receipt| %>
         <% message = receipt.message %>
-        <%= message.sender.email %>
+        <%= message.sender.nickname ? message.sender.nickname : message.sender.email %>
           发表:
         <%= message.body %>
         时间：<%= message.created_at.strftime("%F %T") %> |
