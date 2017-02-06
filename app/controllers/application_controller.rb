@@ -24,7 +24,7 @@ end
 private
     def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:nickname, :email, :password) }
-      devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:nickname, :email, :password, :current_password, :is_female, :date_of_birth) }
+      devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:nickname, :email, :password, :current_password, :is_female, :date_of_birth, :avatar) }
     end
   def find_cart
     cart = Cart.find_by(id: session[:cart_id])
