@@ -33,6 +33,12 @@ class ProductsController < ApplicationController
     @product.destroy
     redirect_to "/"
   end
+  def add_to_cart
+    @product = Product.find(params[:id])
+    current_cart.add_product_to_cart(@product)
+    redirect_to :back
+    flash[:notice] = "加入购物车成功"
+  end
   private
   def product_params
     params.require(:product).permit(:title, :description, :quantity, :price, :image)
