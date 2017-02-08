@@ -30,6 +30,7 @@
               <li><%= link_to(content_tag(:i, "Admin", class: 'fa fa-file-text'), admin_products_path)%></li>
               <% end %>
                <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
+                <li><%= link_to(content_tag(:i, "Orders", class: 'fa fa-file-text'), admin_orders_path)%></li>
             </ul>
           </li>
           <% end %>
