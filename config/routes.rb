@@ -7,9 +7,11 @@ Rails.application.routes.draw do
   resources :carts do
     collection do
     delete :clean
+    post :checkout
   end
   end
   resources :cart_items
+  resources :orders
   devise_for :users
   root 'products#index'
   namespace :admin do
