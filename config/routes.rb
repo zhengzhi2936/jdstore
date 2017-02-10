@@ -10,7 +10,12 @@ Rails.application.routes.draw do
 
     end
   end
-  resources :carts
+  resources :carts do
+    collection do
+      delete :clean
+    end
+  end
+  resources :cart_items
   resources :users, only: [:index]
   resources :messages, only: [:new, :create]
   resources :categories
