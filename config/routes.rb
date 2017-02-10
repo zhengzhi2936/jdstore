@@ -16,6 +16,9 @@ Rails.application.routes.draw do
       get :checkout
     end
   end
+  namespace :account do
+    resources :orders
+  end
   resources :orders
   resources :cart_items
   resources :users, only: [:index]
