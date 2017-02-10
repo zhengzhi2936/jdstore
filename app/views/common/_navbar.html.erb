@@ -38,6 +38,11 @@
               <% end %>
 
         <ul class="nav navbar-nav navbar-right">
+          <li>
+            <%= link_to carts_path do  %>
+                购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
+            <% end %>
+          </li>
           <% if !current_user %>
         <li><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>
         <li><a href="#" data-toggle="modal" data-target="#login-modal">登入</a></li>
@@ -53,11 +58,6 @@
               <% end %>
               <li><%= link_to 'Edit Profile',edit_user_registration_path %></li>
               <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li>
-              <li>
-                <%= link_to "#" do  %>
-                    购物车 <i class="fa fa-shopping-cart"> </i> ( <%= current_cart.products.count %> )
-                <% end %>
-              </li>
             </ul>
           </li>
           <% end %>

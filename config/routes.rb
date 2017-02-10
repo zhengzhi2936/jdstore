@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
     end
   end
+  resources :carts
   resources :users, only: [:index]
   resources :messages, only: [:new, :create]
   resources :categories
