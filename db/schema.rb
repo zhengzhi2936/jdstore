@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170206012700) do
+ActiveRecord::Schema.define(version: 20170210052439) do
 
   create_table "cart_items", force: :cascade do |t|
     t.integer  "cart_id"
@@ -82,6 +82,17 @@ ActiveRecord::Schema.define(version: 20170206012700) do
     t.string   "message_id"
     t.index ["notification_id"], name: "index_mailboxer_receipts_on_notification_id"
     t.index ["receiver_id", "receiver_type"], name: "index_mailboxer_receipts_on_receiver_id_and_receiver_type"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "total",            default: 0
+    t.integer  "user_id"
+    t.string   "billing_name"
+    t.string   "billing_address"
+    t.string   "shipping_name"
+    t.string   "shipping_address"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "photos", force: :cascade do |t|
